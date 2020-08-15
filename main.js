@@ -1,11 +1,24 @@
-import { ToyReact, Component } from './ToyReact';
+import { ToyReact, Component, render } from './ToyReact';
 
 class MyComponent extends Component {
+    constructor() {
+        super();
+        this.state = {
+            a: 1,
+            b: 2,
+        }
+    }
     render() {
         return (
             <div>
                 <span>hello world</span>
-                <span>{this.children}</span>
+                <button onclick={() => {
+                    this.setState({
+                        a: this.state.a + 1,
+                    })
+                }}>add</button>
+                <span>{this.state.a.toString()}</span>
+                <span>{this.state.b.toString()}</span>
             </div>
         )
     }
@@ -13,4 +26,4 @@ class MyComponent extends Component {
 
 let a = <MyComponent name="a" ><div>123</div></MyComponent>
 
-ToyReact.render(a, document.body)
+render(a, document.body)
