@@ -17,8 +17,7 @@ class MyComponent extends Component {
                         a: this.state.a + 1,
                     })
                 }}>add</button>
-                <span>{this.state.a.toString()}</span>
-                <span>{this.state.b.toString()}</span>
+                <span className="hello">{this.state.a.toString()}</span>
             </div>
         )
     }
